@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.23.1'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+}
+
+tasks.named('test') {
+    useTestNG() {
+        useDefaultListeners = true
+        outputDirectory = file("$projectDir/TestNG_Reports")
+    }
+    reports.html.setDestination(file("$projectDir/GradleReports"))
+}
