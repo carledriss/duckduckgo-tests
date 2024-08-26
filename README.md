@@ -1,7 +1,7 @@
 #duckduckgo-test
 
 ###Environment requirements
-* Java 11+
+* Java 17+
 * Chrome or Firefox browser.
 * Gradle.
 
